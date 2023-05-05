@@ -94,7 +94,7 @@ const elementStyles = getComputedStyle(myElement);
 const myElementWidth = parseInt(elementStyles.width);
 //console.log(`The width of myElement is ${myElementWidth}`);
 
-let destinationleft = myElementWidth - 140
+let destinationleft = myElementWidth - 135
 //console.log(destinationleft)
 
 
@@ -128,7 +128,7 @@ let runallbutton = document.getElementById("runallbutton").addEventListener("cli
 
 let resetbutton = document.getElementById("resetbutton").addEventListener("click", () => {
     for (let i = 0; i < elements.length; i++) {
-        gsap.to(document.getElementById(i), { duration: 1, ease: "power1.out", left: 100 });
+        gsap.to(document.getElementById(i), { duration: 1, ease: "power1.out", left: 105 });
     }
 })
 

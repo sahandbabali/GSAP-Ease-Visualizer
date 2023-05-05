@@ -1,9 +1,12 @@
 to do:
 
-- add time to function arguments
 
 
 
+done:
+- add time to function arguments 
+- add in or out to function arguments
+- adding block buttons
 
 
 resources:
