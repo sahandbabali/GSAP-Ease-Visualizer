@@ -1,23 +1,23 @@
 let easedata2 = [{
     easetitle: "power1",
-    easefunction: function (inputelement, left, time) {
+    easefunction: function (inputelement, left, time, inorout) {
         console.log("running power1")
 
-        gsap.to(inputelement, { duration: time, ease: "power1.out", left: left });
+        gsap.to(inputelement, { duration: time, ease: `power1.${inorout}`, left: left });
     }
 },
 {
     easetitle: "bounce",
-    easefunction: function (inputelement, left, time) {
+    easefunction: function (inputelement, left, time, inorout) {
         console.log("running bounce")
 
-        gsap.to(inputelement, { duration: time, ease: "bounce.out", left: left });
+        gsap.to(inputelement, { duration: time, ease: `bounce.${inorout}`, left: left });
     }
 },
 
 {
     easetitle: "steps",
-    easefunction: function (inputelement, left, time) {
+    easefunction: function (inputelement, left, time, inorout) {
         console.log("running steps")
 
         gsap.to(inputelement, { duration: time, ease: "steps(12)", left: left });
@@ -25,28 +25,28 @@ let easedata2 = [{
 },
 {
     easetitle: "expo",
-    easefunction: function (inputelement, left, time) {
+    easefunction: function (inputelement, left, time, inorout) {
         console.log("running expo")
 
-        gsap.to(inputelement, { duration: time, ease: "expo.out", left: left });
+        gsap.to(inputelement, { duration: time, ease: `expo.${inorout}`, left: left });
     }
 }
     ,
 {
     easetitle: "back",
-    easefunction: function (inputelement, left, time) {
+    easefunction: function (inputelement, left, time, inorout) {
         console.log("running back")
 
-        gsap.to(inputelement, { duration: time, ease: "back.out(1.7)", left: left });
+        gsap.to(inputelement, { duration: time, ease: `back.${inorout}(1.7)`, left: left });
     }
 }
     ,
 {
     easetitle: "elastic",
-    easefunction: function (inputelement, left, time) {
+    easefunction: function (inputelement, left, time, inorout) {
         console.log("running elastic")
 
-        gsap.to(inputelement, { duration: time, ease: "elastic.out(0.4, 0.3)", left: left });
+        gsap.to(inputelement, { duration: time, ease: `elastic.${inorout}(0.4, 0.3)`, left: left });
     }
 }
 ]
@@ -107,7 +107,7 @@ for (let i = 0; i < elements.length; i++) {
     element.addEventListener('click', (e) => {
         console.log(e.target.name)
         const inputelement = document.getElementById(e.target.name)
-        easedata2[e.target.name].easefunction(inputelement, destinationleft, Number(document.getElementById("duration").value))
+        easedata2[e.target.name].easefunction(inputelement, destinationleft, Number(document.getElementById("duration").value), document.getElementById("inoroutvalue").value)
     });
 }
 
@@ -119,7 +119,7 @@ for (let i = 0; i < elements.length; i++) {
 let runallbutton = document.getElementById("runallbutton").addEventListener("click", () => {
     for (let i = 0; i < elements.length; i++) {
 
-        easedata2[i].easefunction(document.getElementById(i), destinationleft, Number(document.getElementById("duration").value))
+        easedata2[i].easefunction(document.getElementById(i), destinationleft, Number(document.getElementById("duration").value), document.getElementById("inoroutvalue").value)
     }
 })
 
